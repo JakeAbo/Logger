@@ -23,7 +23,7 @@ Pre-defined Macros in Log.hpp makes usage easier:
 #define LOG_NOTICE	Log(__FILE__, __LINE__, __FUNCTION__).notice()
 #define LOG_DEBUG	Log(__FILE__, __LINE__, __FUNCTION__).debug()
 #define LOG_ERROR	Log(__FILE__, __LINE__, __FUNCTION__).error()
-```cpp
+```
 
 And you can use it like:
 ```cpp
@@ -36,7 +36,7 @@ void example()
 	LOG_DEBUG	<< "hello" << std::endl;
 	LOG_ERROR	<< "hello" << std::endl;
 }
-```cpp
+```
 
 Notice: you should always end with std::endl which simply push the msg to the queue.
 
