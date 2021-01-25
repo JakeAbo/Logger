@@ -1,5 +1,5 @@
 # Logger
-Modern C++ Logger - Logger developed under visual studio 2019 using Modern C++ 17.
+Modern C++ Logger - Logger developed above Windows OS using visual studio 2019 IDE with Modern C++ 17.
 Support different severity levels, auto, generic, scalable and easy to use logger.
 The module is tested.
 
