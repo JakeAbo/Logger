@@ -48,7 +48,6 @@ private:
 		_streamers.emplace_back(std::make_unique<FileStreamer>());
 		_thd = std::thread(&Logger::run, this);
 	}
-
 	void done()
 	{
 		_isRunning = false; /* Non need of lock because destructor call onced */

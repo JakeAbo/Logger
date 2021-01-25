@@ -26,10 +26,18 @@ private:
 		return _stringifySeverityMap.count(severity) ? _stringifySeverityMap[severity] : "LOG_UNKNOWN";
 	}
 
+	void createDirIfNotExist()
+	{
+		if (!std::filesystem::exists(Config::LOGGER_DIR_PATH))
+			std::filesystem::create_directory(Config::LOGGER_DIR_PATH);
+	}
+
 public:
 	FileStreamer()
 		: _logsDir(Config::LOGGER_DIR_PATH), _currentLogFileName()
 	{
+		createDirIfNotExist();
+
 		_stringifySeverityMap.insert(std::make_pair<Severity, std::string>(Severity::LOG_EMERG, "LOG_EMERG"));
 		_stringifySeverityMap.insert(std::make_pair<Severity, std::string>(Severity::LOG_ALERT, "LOG_ALERT"));
 		_stringifySeverityMap.insert(std::make_pair<Severity, std::string>(Severity::LOG_CRIT, "LOG_CRIT"));
